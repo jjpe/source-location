@@ -6,7 +6,7 @@ use serde::{Deserialize, Serialize};
 #[macro_export]
 macro_rules! location {
     () => {
-        $crate::error::Location {
+        $crate::Location {
             file:   file!().to_string(),
             line:   line!(),
             column: column!(),
@@ -40,5 +40,13 @@ mod tests {
         assert_eq!(  file, "");
         assert_eq!(  line,  0);
         assert_eq!(column,  0);
+    }
+
+    #[test]
+    fn location_macro() {
+        let Location { file, line, column } = location!();
+        assert_eq!(  file, "src/lib.rs");
+        assert_eq!(  line,  47);
+        assert_eq!(column,  47);
     }
 }
