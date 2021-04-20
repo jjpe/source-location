@@ -1,6 +1,6 @@
 [package]
 name = "source-location"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Joey Ezechiels <joey.ezechiels@gmail.com>"]
 edition = "2018"
 description = "Container struct for source location data + construction macro"
